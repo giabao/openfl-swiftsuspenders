@@ -256,19 +256,23 @@ class Injector extends EventDispatcher
 		return value;
 	}
 	
-	private static var _baseTypes:Array<String> = initBaseTypeMappingIds([Dynamic, Array, Class/*, Function*//*, Bool*/, Float, Int, UInt, String]);
-
- 	private static function initBaseTypeMappingIds(types:Array<Dynamic>):Array<String>
+	private static var _baseTypes:Array<String> = [
+		'Dynamic|', 'Array|', 'Class|'/*, 'Function|', 'Bool|'*/, 'Float|', 'Int|', 'UInt|', 'String|'
+	];
+//	private static var _baseTypes:Array<String> = initBaseTypeMappingIds([Dynamic, Array, Class/*, Function*//*, Bool*/, Float, Int, UInt, String]);
+ 	/*
+	private static function initBaseTypeMappingIds(types:Array<Dynamic>):Array<String>
 	{
 		// CHECK
 		var returnArray = new Array<String>();
-		for (i in 0...types.length) 
+		for (i in 0...types.length)
 		{
 			returnArray.push(CallProxy.replaceClassName(types[i]) + '|');
 		}
 		return returnArray;
 	}
-	
+	*/
+
 	//----------------------            Internal Properties             ----------------------//
 	public var providerMappings = new Map<String,DependencyProvider>();
 
